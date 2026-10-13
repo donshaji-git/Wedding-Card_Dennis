@@ -3,61 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-  <title>Dennis Mathew & Anu George | Royal Wedding Invitation | November 21, 2026</title>
-  <meta name="description" content="You are warmly invited to celebrate the Holy Matrimony of Dennis Mathew and Anu George at St. Maria Goretti Syro-Malabar Church, Thopramkudy on November 21, 2026.">
-  <meta name="theme-color" content="#D4AF37">
+  <title>Dennis Mathew &amp; Anu George | Royal Wedding Invitation | നവംബർ 21, 2026</title>
+  <meta name="description" content="ഡെന്നിസ് മാത്യു & അനു ജോർജ്ജ് വിവാഹ ക്ഷണക്കത്ത്. Holy Matrimony of Dennis Mathew and Anu George at St. Maria Goretti Syro-Malabar Church, Thopramkudy on Saturday, November 21, 2026.">
+  <meta name="theme-color" content="#C59B27">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Dennis Mathew & Anu George — Wedding Invitation">
-  <meta property="og:description" content="Saturday, November 21, 2026 | St. Maria Goretti Church, Thopramkudy. Tap to experience the animated invitation.">
+  <meta property="og:title" content="Dennis Mathew &amp; Anu George — Wedding Invitation | വിവാഹ ക്ഷണക്കത്ത്">
+  <meta property="og:description" content="2026 നവംബർ 21, ശനിയാഴ്ച | St. Maria Goretti Church, Thopramkudy. Tap to experience the royal animated invitation.">
   <meta property="og:image" content="assets/images/couple-hero.jpg">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts: Royal Calligraphy, Luxurious Serifs, and Modern Sans -->
+  <!-- Bespoke Typography: Italiana, Pinyon Script, Noto Serif Malayalam & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Noto+Serif+Malayalam:wght@400;500;600;700&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Main Design System CSS -->
+  <!-- Custom Performance & Luxury Design System CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- Canvas Confetti Library for Romantic Heart & Sparkle Bursts -->
+  <!-- Lightweight Canvas Confetti Library for Celebrations -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
 </head>
 <body>
 
-  <!-- Subtle Parchment Texture & Floating Particle Canvas -->
+  <!-- Royal Paper Texture & Smooth GPU-Accelerated Canvas Particles -->
   <div class="paper-texture"></div>
   <canvas id="petal-canvas"></canvas>
 
   <!-- ======================================================================
-       1. ROYAL ENVELOPE / WAX SEAL OPENING SCREEN
-       Metaphor: "The Golden Envelope Seal" - Unlocks romantic music & invitation
+       1. ROYAL FOLIO & WAX SEAL OPENING EXPERIENCE
+       Bilingual Malayalam + English Royal Stationery Folio
        ====================================================================== -->
   <div id="royal-curtain" class="royal-curtain">
     <div class="envelope-card">
-      <div id="envelope-monogram" class="envelope-monogram" title="Tap to Break Seal">
-        <div class="monogram-pulse"></div>
-        D&amp;A
-      </div>
-      <p class="envelope-title">The Royal Wedding Invitation</p>
+      <div class="folio-crest">✠</div>
+      <p class="envelope-malayalam-tag">ദൈവകൃപയാൽ ഞങ്ങൾ ഒന്നാകുന്നു</p>
+      <p class="envelope-title">The Holy Matrimony of</p>
+      
       <h1 class="envelope-couple">
         Dennis Mathew
-        <span>&amp;</span>
+        <span class="envelope-ampersand">&amp;</span>
         Anu George
       </h1>
-      <p class="envelope-date">✦ Saturday, November 21, 2026 ✦</p>
+
+      <p class="envelope-malayalam-sub">വിവാഹ ക്ഷണക്കത്ത്</p>
+
+      <div class="envelope-date-box">
+        <p class="envelope-date">✦ Saturday, November 21, 2026 ✦</p>
+      </div>
+
+      <!-- 3D Embossed Royal Wax Seal Monogram -->
+      <div id="envelope-monogram" class="envelope-monogram" title="Tap to Open">
+        <div class="monogram-pulse"></div>
+        D ✠ A
+      </div>
+
+      <!-- Tactile Royal Opening Button -->
       <button id="open-seal-btn" class="open-seal-btn">
-        <span class="seal-icon">💌</span> Open Invitation
+        <span>💌</span>
+        <span>ക്ഷണക്കത്ത് തുറക്കുക &bull; Open Invitation</span>
       </button>
     </div>
   </div>
 
   <!-- ======================================================================
-       2. FLOATING MUSIC MUSIC BOX WIDGET
-       Metaphor: "The Magic Music Box" - Plays romantic background melody
+       2. FLOATING ROMANTIC MUSIC BOX CONTROLLER
        ====================================================================== -->
-  <div id="music-box-widget" class="music-box-widget" title="Toggle Romantic Background Music">
+  <div id="music-box-widget" class="music-box-widget" title="Toggle Romantic Background Melody">
     <div id="disc-wrapper" class="disc-wrapper">
       <div class="disc-center"></div>
     </div>
@@ -74,81 +86,75 @@
 
   <!-- ======================================================================
        3. HERO / OPENING SECTION
-       Grand entrance with glowing typography, auspicious date & live countdown
+       Grand bilingual reveal & live countdown (No scroll-down cue)
        ====================================================================== -->
   <section id="hero" class="hero-section">
-    <div class="hero-background-art"></div>
-
     <div class="royal-badge">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-      </svg>
-      <span>We are getting married</span>
+      <span class="royal-badge-malayalam">വിവാഹ മംഗളങ്ങൾ</span>
+      <span class="royal-badge-en">The Holy Wedding Celebration</span>
     </div>
 
     <div class="hero-names-container">
       <h2 class="hero-name">Dennis Mathew</h2>
+      <span class="hero-name-malayalam">ഡെന്നിസ് മാത്യു</span>
       <span class="hero-ampersand">&amp;</span>
       <h2 class="hero-name">Anu George</h2>
+      <span class="hero-name-malayalam">അനു ജോർജ്ജ്</span>
     </div>
 
-    <p class="hero-subtitle">Together with their beloved families, invite you to celebrate their union</p>
+    <p class="hero-subtitle">
+      ഞങ്ങളുടെ വിവാഹ മംഗളങ്ങളിലേക്ക് നിങ്ങളെ ഏവരെയും സ്നേഹപൂർവ്വം സ്വാഗതം ചെയ്യുന്നു
+    </p>
 
-    <!-- Prominently Featured Auspicious Date Card -->
+    <!-- Auspicious Date Highlight Card -->
     <div class="hero-date-card">
-      <span class="hero-date-day">Saturday</span>
-      <span class="hero-date-full">November 21, 2026</span>
-      <span class="hero-date-location">St. Maria Goretti Church, Thopramkudy</span>
+      <span class="hero-date-malayalam">2026 നവംബർ 21, ശനിയാഴ്ച</span>
+      <span class="hero-date-en">Saturday, November 21, 2026</span>
+      <span class="hero-date-church">വിശുദ്ധ മരിയ ഗൊരേത്തി സിറോ-മലബാർ പള്ളി, തോപ്രാംകുടി</span>
     </div>
 
-    <!-- Live Countdown Timer -->
+    <!-- Live Countdown Timer with Malayalam Sub-labels -->
     <div class="countdown-container">
-      <p class="countdown-title">Counting Down to the Blessed Moment</p>
+      <p class="countdown-title-malayalam">വിശുദ്ധ മുഹൂർത്തത്തിലേക്ക് ഇനി</p>
       <div class="countdown-grid">
         <div class="countdown-box">
           <span id="count-days" class="countdown-number">00</span>
-          <span class="countdown-label">Days</span>
+          <span class="countdown-label-malayalam">ദിവസങ്ങൾ</span>
+          <span class="countdown-label-en">Days</span>
         </div>
         <div class="countdown-box">
           <span id="count-hours" class="countdown-number">00</span>
-          <span class="countdown-label">Hours</span>
+          <span class="countdown-label-malayalam">മണിക്കൂറുകൾ</span>
+          <span class="countdown-label-en">Hours</span>
         </div>
         <div class="countdown-box">
           <span id="count-minutes" class="countdown-number">00</span>
-          <span class="countdown-label">Mins</span>
+          <span class="countdown-label-malayalam">മിനിറ്റുകൾ</span>
+          <span class="countdown-label-en">Mins</span>
         </div>
         <div class="countdown-box">
           <span id="count-seconds" class="countdown-number">00</span>
-          <span class="countdown-label">Secs</span>
+          <span class="countdown-label-malayalam">സെക്കൻഡുകൾ</span>
+          <span class="countdown-label-en">Secs</span>
         </div>
       </div>
     </div>
-
-    <!-- Subtle animated scroll down indicator -->
-    <a href="#couple" class="scroll-cue">
-      <span>Scroll to Discover</span>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
-      </svg>
-    </a>
   </section>
 
   <!-- ======================================================================
        4. THE COUPLE & FAMILY PROFILES
-       Metaphor: "The Royal Portrait Gallery" - Split glassmorphism profile cards
+       Authentic Syrian Christian lineage & profile cards
        ====================================================================== -->
-  <section id="couple" class="section-wrapper animate-on-scroll">
+  <section id="couple" class="section-wrapper">
     <div class="section-header">
-      <span class="section-script-tag">The Couple</span>
-      <h3 class="section-main-title">Two Hearts &amp; Families</h3>
+      <span class="section-script-tag">The Holy Union</span>
+      <h3 class="section-malayalam-heading">വരനും വധുവും കുടുംബാംഗങ്ങളും</h3>
+      <p class="section-main-title">The Couple &amp; Families</p>
       <div class="section-divider">
         <span class="divider-line"></span>
         <span class="divider-ornament">❦</span>
         <span class="divider-line"></span>
       </div>
-      <p class="section-subtitle">
-        Joined together by faith, guided by love, and blessed by family traditions.
-      </p>
     </div>
 
     <div class="profiles-container">
@@ -156,13 +162,16 @@
       <div class="profile-card">
         <div class="profile-photo-wrapper">
           <div class="photo-glow-ring"></div>
-          <!-- Image mapped from: C:\Users\donsh\Documents\Dennis\row img\ or assets/images/dennis-portrait.jpg -->
-          <img src="assets/images/dennis-portrait.jpg" alt="Dennis Mathew - The Groom" class="profile-photo" loading="lazy">
-          <span class="profile-role-tag">The Groom</span>
+          <img src="assets/images/dennis-portrait.jpg" alt="Dennis Mathew - The Groom" class="profile-photo" loading="lazy" decoding="async">
+          <span class="profile-role-tag">വരൻ &bull; The Groom</span>
         </div>
 
-        <h4 class="profile-name">Dennis Mathew</h4>
-        <p class="profile-profession">Managing Partner, Cool Empire<br><small style="color:var(--text-muted);">(Daikin Authorised Service Center, Ernakulam)</small></p>
+        <h4 class="profile-name-malayalam">ഡെന്നിസ് മാത്യു</h4>
+        <p class="profile-name-en">Dennis Mathew</p>
+        <p class="profile-profession">
+          മാനേജിങ് പാർട്ണർ, കൂൾ എംപയർ<br>
+          <small style="color:var(--text-muted);">(Daikin Authorised Service Center, Ernakulam)</small>
+        </p>
 
         <div class="family-info-list">
           <!-- Parents -->
@@ -174,8 +183,8 @@
               <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
             </svg>
             <div class="info-content">
-              <div class="info-title">Parents</div>
-              <div class="info-value"><strong>Binoy Cheriyan</strong> &amp; <strong>Kunjumol Binoy</strong></div>
+              <div class="info-title">മാതാപിതാക്കൾ &bull; Parents</div>
+              <div class="info-value"><strong>ബിനോയ് ചെറിയാൻ</strong> &amp; <strong>കുഞ്ഞുമോൾ ബിനോയ്</strong><br><small style="color:var(--text-muted);">Binoy Cheriyan &amp; Kunjumol Binoy</small></div>
             </div>
           </div>
 
@@ -186,20 +195,24 @@
               <path d="M12 6v6l4 2"></path>
             </svg>
             <div class="info-content">
-              <div class="info-title">Sister</div>
-              <div class="info-value"><strong>Della Rachel Mathew</strong></div>
+              <div class="info-title">സഹോദരി &bull; Sister</div>
+              <div class="info-value"><strong>ഡെല്ല റേച്ചൽ മാത്യു</strong><br><small style="color:var(--text-muted);">Della Rachel Mathew</small></div>
             </div>
           </div>
 
-          <!-- Ancestral Home & Address -->
+          <!-- Ancestral House & Address -->
           <div class="info-item">
             <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
               <polyline points="9 22 9 12 15 12 15 22"></polyline>
             </svg>
             <div class="info-content">
-              <div class="info-title">Family Home &amp; Address</div>
-              <div class="info-value"><strong>Thenakarayil House</strong><br>Perumthotty P.O., Perumthotty</div>
+              <div class="info-title">കുടുംബവീട് &bull; Family Home</div>
+              <div class="info-value">
+                <strong>തെന്നക്കരയിൽ വീട്</strong><br>
+                പെരുന്തോട്ടി പി.ഒ., പെരുന്തോട്ടി<br>
+                <small style="color:var(--text-muted);">Thenakarayil House, Perumthotty</small>
+              </div>
             </div>
           </div>
 
@@ -209,8 +222,11 @@
               <path d="M12 2l3 7h7l-5.5 4.5 2 7.5-6.5-4.5-6.5 4.5 2-7.5L2 9h7z"></path>
             </svg>
             <div class="info-content">
-              <div class="info-title">Parish Church</div>
-              <div class="info-value"><strong>St. Maria Goretti Syro-Malabar Church</strong>, Thopramkudy</div>
+              <div class="info-title">ഇടവക &bull; Parish Church</div>
+              <div class="info-value">
+                <strong>വിശുദ്ധ മരിയ ഗൊരേത്തി സിറോ-മലബാർ ദേവാലയം</strong>, തോപ്രാംകുടി<br>
+                <small style="color:var(--text-muted);">St. Maria Goretti Church, Thopramkudy</small>
+              </div>
             </div>
           </div>
         </div>
@@ -220,13 +236,16 @@
       <div class="profile-card">
         <div class="profile-photo-wrapper">
           <div class="photo-glow-ring"></div>
-          <!-- Image mapped from: C:\Users\donsh\Documents\Dennis\row img\ or assets/images/anu-portrait.jpg -->
-          <img src="assets/images/anu-portrait.jpg" alt="Anu George - The Bride" class="profile-photo" loading="lazy">
-          <span class="profile-role-tag">The Bride</span>
+          <img src="assets/images/anu-portrait.jpg" alt="Anu George - The Bride" class="profile-photo" loading="lazy" decoding="async">
+          <span class="profile-role-tag">വധു &bull; The Bride</span>
         </div>
 
-        <h4 class="profile-name">Anu George</h4>
-        <p class="profile-profession">Registered Nurse<br><small style="color:var(--text-muted);">&nbsp;</small></p>
+        <h4 class="profile-name-malayalam">അനു ജോർജ്ജ്</h4>
+        <p class="profile-name-en">Anu George</p>
+        <p class="profile-profession">
+          രജിസ്റ്റേർഡ് നേഴ്സ്<br>
+          <small style="color:var(--text-muted);">(Registered Nurse)</small>
+        </p>
 
         <div class="family-info-list">
           <!-- Parents -->
@@ -238,8 +257,8 @@
               <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
             </svg>
             <div class="info-content">
-              <div class="info-title">Parents</div>
-              <div class="info-value"><strong>George P. D.</strong> &amp; <strong>Molly George</strong></div>
+              <div class="info-title">മാതാപിതാക്കൾ &bull; Parents</div>
+              <div class="info-value"><strong>ജോർജ്ജ് പി. ഡി.</strong> &amp; <strong>മോളി ജോർജ്ജ്</strong><br><small style="color:var(--text-muted);">George P. D. &amp; Molly George</small></div>
             </div>
           </div>
 
@@ -250,23 +269,28 @@
               <path d="M12 6v6l4 2"></path>
             </svg>
             <div class="info-content">
-              <div class="info-title">Sisters, Brother-in-law &amp; Niece</div>
+              <div class="info-title">സഹോദരിമാർ &amp; കുടുംബം &bull; Family</div>
               <div class="info-value">
-                Sisters: <strong>Meenu, Chinju, Manju</strong><br>
-                Brother-in-law: <strong>Libin</strong> &bull; Niece: <strong>Amal</strong>
+                സഹോദരിമാർ: <strong>മീനു, ചിഞ്ചു, മഞ്ജു</strong><br>
+                അളിയൻ: <strong>ലിബിൻ</strong> &bull; അനന്തരവൾ: <strong>അമൽ</strong><br>
+                <small style="color:var(--text-muted);">Sisters: Meenu, Chinju, Manju | Libin, Amal</small>
               </div>
             </div>
           </div>
 
-          <!-- Ancestral Home & Address -->
+          <!-- Ancestral House & Address -->
           <div class="info-item">
             <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
               <polyline points="9 22 9 12 15 12 15 22"></polyline>
             </svg>
             <div class="info-content">
-              <div class="info-title">Family Home &amp; Address</div>
-              <div class="info-value"><strong>Akkattukunnel House</strong><br>Upputhara P.O., Ettakkanam</div>
+              <div class="info-title">കുടുംബവീട് &bull; Family Home</div>
+              <div class="info-value">
+                <strong>ആക്കാട്ടുക്കുന്നേൽ വീട്</strong><br>
+                ഉപ്പുതറ പി.ഒ., എട്ടേക്കാനം<br>
+                <small style="color:var(--text-muted);">Akkattukunnel House, Upputhara</small>
+              </div>
             </div>
           </div>
 
@@ -276,49 +300,51 @@
               <path d="M12 2l3 7h7l-5.5 4.5 2 7.5-6.5-4.5-6.5 4.5 2-7.5L2 9h7z"></path>
             </svg>
             <div class="info-content">
-              <div class="info-title">Parish Church</div>
-              <div class="info-value"><strong>St. Mary's Forane Church</strong>, Upputhara</div>
+              <div class="info-title">ഇടവക &bull; Parish Church</div>
+              <div class="info-value">
+                <strong>സെന്റ് മേരീസ് ഫൊറോന പള്ളി</strong>, ഉപ്പുതറ<br>
+                <small style="color:var(--text-muted);">St. Mary's Forane Church, Upputhara</small>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Romantic Scripture Banner -->
+    <!-- Romantic Syrian Christian Scripture Banner -->
     <div class="scripture-banner">
-      <blockquote class="scripture-quote">
-        “Love is patient, love is kind. It does not envy, it does not boast, it is not proud...
-        Love never fails.”
-      </blockquote>
-      <cite class="scripture-ref">— 1 Corinthians 13:4-8</cite>
+      <p class="scripture-malayalam">
+        “ദൈവം യോജിപ്പിച്ചതിനെ മനുഷ്യൻ വേർപെടുത്താതിരിക്കട്ടെ.”
+      </p>
+      <p class="scripture-en">
+        “What therefore God has joined together, let not man put asunder.”
+      </p>
+      <cite class="scripture-ref">— മത്തായി 19:6 &bull; Matthew 19:6</cite>
     </div>
   </section>
 
   <!-- ======================================================================
-       5. SOLEMNISATION / CHURCH & LOCATION SECTION
-       Highlighted venue with interactive satellite map view & direct Google Maps CTA
+       5. SOLEMNISATION / CHURCH & SATELLITE MAP
        ====================================================================== -->
-  <section id="church" class="section-wrapper animate-on-scroll">
+  <section id="church" class="section-wrapper">
     <div class="section-header">
-      <span class="section-script-tag">The Holy Nuptials</span>
-      <h3 class="section-main-title">Solemnisation &amp; Venue</h3>
+      <span class="section-script-tag">The Holy Solemnisation</span>
+      <h3 class="section-malayalam-heading">വിവാഹ കൂദാശ &amp; വേദി</h3>
+      <p class="section-main-title">Solemnisation &amp; Church Venue</p>
       <div class="section-divider">
         <span class="divider-line"></span>
         <span class="divider-ornament">✦</span>
         <span class="divider-line"></span>
       </div>
-      <p class="section-subtitle">
-        Where two lives become one in holy matrimony before God and our loved ones.
-      </p>
     </div>
 
     <div class="church-card">
       <div class="church-hero-banner">
-        <img src="assets/images/wedding-backdrop.png" alt="Church Atmosphere" class="church-hero-bg">
+        <img src="assets/images/wedding-backdrop.png" alt="Church Atmosphere" class="church-hero-bg" loading="lazy" decoding="async">
         <div class="church-banner-overlay">
-          <span class="church-badge">Wedding Ceremony Venue</span>
-          <h4 class="church-title">St. Maria Goretti Syro-Malabar Church</h4>
-          <p class="church-location-sub">Thopramkudy, Idukki District, Kerala</p>
+          <span class="church-badge">വിവാഹ ദേവാലയം</span>
+          <h4 class="church-title-malayalam">വിശുദ്ധ മരിയ ഗൊരേത്തി സിറോ-മലബാർ ദേവാലയം</h4>
+          <p class="church-title-en">St. Maria Goretti Church, Thopramkudy, Idukki</p>
         </div>
       </div>
 
@@ -332,8 +358,8 @@
               <line x1="3" y1="10" x2="21" y2="10"></line>
             </svg>
             <div class="church-detail-text">
-              <h4>Auspicious Date</h4>
-              <p>Saturday, November 21, 2026</p>
+              <h4>തീയതി &bull; Date</h4>
+              <p>2026 നവംബർ 21, ശനിയാഴ്ച<br><small style="color:var(--text-muted);">Saturday, November 21, 2026</small></p>
             </div>
           </div>
 
@@ -343,13 +369,13 @@
               <polyline points="12 6 12 12 16 14"></polyline>
             </svg>
             <div class="church-detail-text">
-              <h4>Ceremony Time</h4>
-              <p>10:30 AM IST (Solemnisation Service)</p>
+              <h4>ശുശ്രൂഷാ സമയം &bull; Time</h4>
+              <p>രാവിലെ 10:30 ന്<br><small style="color:var(--text-muted);">10:30 AM IST (Solemnisation Service)</small></p>
             </div>
           </div>
         </div>
 
-        <!-- Embedded Interactive Satellite View of St. Maria Goretti Church, Thopramkudy -->
+        <!-- Embedded Interactive Satellite Map View of Thopramkudy Church -->
         <div class="map-embed-container">
           <iframe 
             class="map-embed-iframe"
@@ -361,17 +387,17 @@
           </iframe>
         </div>
 
-        <!-- High-contrast, stylish Google Maps CTA button -->
+        <!-- Refined High-Contrast Google Maps CTA Button -->
         <a 
           href="https://www.google.com/maps/search/?api=1&query=St.+Maria+Goretti+Church+Thopramkudy" 
           target="_blank" 
           rel="noopener noreferrer" 
           class="btn-gold-maps">
-          <svg class="btn-icon-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
             <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
           </svg>
-          Open in Google Maps
+          ലൊക്കേഷൻ കാണുക &bull; Open in Google Maps
         </a>
       </div>
     </div>
@@ -379,55 +405,55 @@
 
   <!-- ======================================================================
        6. CELEBRATION SCHEDULE & TIMELINE
-       Clear timeline cards with placeholders for exact hours and calendar export
        ====================================================================== -->
-  <section id="schedule" class="section-wrapper animate-on-scroll">
+  <section id="schedule" class="section-wrapper">
     <div class="section-header">
-      <span class="section-script-tag">Order of Events</span>
-      <h3 class="section-main-title">Celebration Schedule</h3>
+      <span class="section-script-tag">Order of Celebrations</span>
+      <h3 class="section-malayalam-heading">വിവാഹ ചടങ്ങുകൾ</h3>
+      <p class="section-main-title">Celebration Schedule</p>
       <div class="section-divider">
         <span class="divider-line"></span>
         <span class="divider-ornament">✦</span>
         <span class="divider-line"></span>
       </div>
-      <p class="section-subtitle">
-        Join us throughout this memorable day of blessings, music, and banquet.
-      </p>
     </div>
 
     <div class="timeline-track">
-      <!-- Event 1: Holy Matrimony -->
+      <!-- 1. Holy Matrimony -->
       <div class="timeline-event">
         <div class="timeline-dot"></div>
         <div class="event-box">
-          <span class="event-time-badge">10:30 AM IST (Placeholder)</span>
-          <h4 class="event-title">Holy Matrimony &amp; Solemnisation</h4>
+          <span class="event-time-badge">10:30 AM IST</span>
+          <h4 class="event-title-malayalam">വിവാഹ ശുശ്രൂഷ (Holy Matrimony)</h4>
+          <p class="event-title-en">Solemn Nuptial Blessing</p>
           <p class="event-desc">
-            The sacred nuptial mass and solemn wedding vows at St. Maria Goretti Syro-Malabar Church, Thopramkudy.
+            തോപ്രാംകുടി സെന്റ് മരിയ ഗൊരേത്തി സിറോ-മലബാർ പള്ളിയിൽ വെച്ച് നടക്കുന്ന വിശുദ്ധ വിവാഹ ശുശ്രൂഷകൾ.
           </p>
         </div>
       </div>
 
-      <!-- Event 2: Wedding Reception -->
+      <!-- 2. Wedding Reception -->
       <div class="timeline-event">
         <div class="timeline-dot"></div>
         <div class="event-box">
-          <span class="event-time-badge">12:30 PM IST (Placeholder)</span>
-          <h4 class="event-title">Reception &amp; Cake Cutting</h4>
+          <span class="event-time-badge">12:30 PM IST</span>
+          <h4 class="event-title-malayalam">സ്നേഹവിരുന്ന് &amp; കേക്ക് കട്ടിംഗ്</h4>
+          <p class="event-title-en">Wedding Reception &amp; Toast</p>
           <p class="event-desc">
-            Toast to the newlyweds, family photo sessions, cake cutting, and felicitation ceremonies at the Parish Hall.
+            നവമിഥുനങ്ങൾക്ക് ആശംസകൾ നേരുന്നതിനും മധുരം പങ്കിടുന്നതിനുമുള്ള സംഗമം.
           </p>
         </div>
       </div>
 
-      <!-- Event 3: Grand Wedding Feast -->
+      <!-- 3. Grand Feast -->
       <div class="timeline-event">
         <div class="timeline-dot"></div>
         <div class="event-box">
-          <span class="event-time-badge">01:15 PM IST (Placeholder)</span>
-          <h4 class="event-title">Grand Wedding Feast (Sadhya / Banquet)</h4>
+          <span class="event-time-badge">01:15 PM IST</span>
+          <h4 class="event-title-malayalam">ആഘോഷ സദ്യ (Grand Feast)</h4>
+          <p class="event-title-en">Wedding Banquet with Family &amp; Friends</p>
           <p class="event-desc">
-            A sumptuous celebratory banquet shared with beloved friends, family, and distinguished guests.
+            സ്നേഹജനങ്ങളോടൊപ്പം സന്തോഷപൂർവ്വം പങ്കിടുന്ന വിഭവസമൃദ്ധമായ വിവാഹ സദ്യ.
           </p>
         </div>
       </div>
@@ -442,44 +468,39 @@
           <line x1="8" y1="2" x2="8" y2="6"></line>
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
-        Add Event to Google / Apple Calendar
+        കലണ്ടറിൽ ചേർക്കുക &bull; Add to Calendar
       </a>
     </div>
   </section>
 
   <!-- ======================================================================
-       7. PHOTO GALLERY & MEMORIES
-       Metaphor: "The Magic Photo Album Box"
-       Mapping Note: Images are sourced from C:\Users\donsh\Documents\Dennis\row img\
-       represented here via standard relative paths: assets/images/...
+       7. PHOTO GALLERY & MEMORIES (ALL 11 UNIQUE PHOTOS, ZERO DUPLICATES)
        ====================================================================== -->
-  <section id="gallery" class="section-wrapper animate-on-scroll">
+  <section id="gallery" class="section-wrapper">
     <div class="section-header">
       <span class="section-script-tag">Moments in Love</span>
-      <h3 class="section-main-title">Photo Album &amp; Memories</h3>
+      <h3 class="section-malayalam-heading">മധുരസ്മരണകൾ</h3>
+      <p class="section-main-title">Treasured Memories</p>
       <div class="section-divider">
         <span class="divider-line"></span>
         <span class="divider-ornament">📸</span>
         <span class="divider-line"></span>
       </div>
-      <p class="section-subtitle">
-        Glimpses of their beautiful courtship, shared smiles, and treasured memories.
-      </p>
     </div>
 
     <!-- Gallery Category Filter Chips -->
     <div class="gallery-filter-chips">
-      <button class="filter-chip active" data-filter="all">All Memories</button>
-      <button class="filter-chip" data-filter="couple">Dennis &amp; Anu</button>
-      <button class="filter-chip" data-filter="portraits">Portraits</button>
-      <button class="filter-chip" data-filter="moments">Candid Moments</button>
+      <button class="filter-chip active" data-filter="all">എല്ലാം &bull; All</button>
+      <button class="filter-chip" data-filter="couple">ഡെന്നിസ് &amp; അനു</button>
+      <button class="filter-chip" data-filter="portraits">ചിത്രങ്ങൾ &bull; Portraits</button>
+      <button class="filter-chip" data-filter="moments">നിമിഷങ്ങൾ &bull; Moments</button>
     </div>
 
-    <!-- Masonry Layout for Gallery Images (All Unique Photos) -->
+    <!-- Masonry Layout for Gallery Images -->
     <div class="gallery-grid" id="gallery-grid">
       <!-- 1. Couple Hero Feature -->
       <div class="gallery-item" data-category="couple">
-        <img src="assets/images/couple-hero.jpg" alt="Dennis and Anu Together" class="gallery-img" loading="lazy">
+        <img src="assets/images/couple-hero.jpg" alt="Dennis and Anu Together" class="gallery-img" loading="lazy" decoding="async">
         <div class="gallery-overlay">
           <span class="gallery-caption">✦ Pure Joy</span>
         </div>
@@ -487,7 +508,7 @@
 
       <!-- 2. Dennis Portrait -->
       <div class="gallery-item" data-category="portraits">
-        <img src="assets/images/dennis-portrait.jpg" alt="Dennis Mathew Portrait" class="gallery-img" loading="lazy">
+        <img src="assets/images/dennis-portrait.jpg" alt="Dennis Mathew Portrait" class="gallery-img" loading="lazy" decoding="async">
         <div class="gallery-overlay">
           <span class="gallery-caption">✦ Dennis Mathew</span>
         </div>
@@ -495,7 +516,7 @@
 
       <!-- 3. Anu Portrait -->
       <div class="gallery-item" data-category="portraits">
-        <img src="assets/images/anu-portrait.jpg" alt="Anu George Portrait" class="gallery-img" loading="lazy">
+        <img src="assets/images/anu-portrait.jpg" alt="Anu George Portrait" class="gallery-img" loading="lazy" decoding="async">
         <div class="gallery-overlay">
           <span class="gallery-caption">✦ Anu George</span>
         </div>
@@ -503,7 +524,7 @@
 
       <!-- 4. Couple Selfie Moment -->
       <div class="gallery-item" data-category="couple moments">
-        <img src="assets/images/couple-selfie.jpg" alt="Sweet Moments" class="gallery-img" loading="lazy">
+        <img src="assets/images/couple-selfie.jpg" alt="Sweet Moments" class="gallery-img" loading="lazy" decoding="async">
         <div class="gallery-overlay">
           <span class="gallery-caption">✦ Sweet Moments</span>
         </div>
@@ -511,7 +532,7 @@
 
       <!-- 5. Candid Memory 1 -->
       <div class="gallery-item" data-category="couple moments">
-        <img src="assets/images/gallery-1.jpg" alt="Cherished Times" class="gallery-img" loading="lazy">
+        <img src="assets/images/gallery-1.jpg" alt="Cherished Times" class="gallery-img" loading="lazy" decoding="async">
         <div class="gallery-overlay">
           <span class="gallery-caption">✦ Cherished Times</span>
         </div>
@@ -519,7 +540,7 @@
 
       <!-- 6. Candid Memory 2 -->
       <div class="gallery-item" data-category="moments">
-        <img src="assets/images/gallery-2.jpg" alt="Heartfelt Laughter" class="gallery-img" loading="lazy">
+        <img src="assets/images/gallery-2.jpg" alt="Heartfelt Laughter" class="gallery-img" loading="lazy" decoding="async">
         <div class="gallery-overlay">
           <span class="gallery-caption">✦ Heartfelt Laughter</span>
         </div>
@@ -527,7 +548,7 @@
 
       <!-- 7. Candid Memory 3 -->
       <div class="gallery-item" data-category="moments">
-        <img src="assets/images/gallery-3.jpg" alt="Golden Rays" class="gallery-img" loading="lazy">
+        <img src="assets/images/gallery-3.jpg" alt="Golden Rays" class="gallery-img" loading="lazy" decoding="async">
         <div class="gallery-overlay">
           <span class="gallery-caption">✦ Golden Rays</span>
         </div>
@@ -535,7 +556,7 @@
 
       <!-- 8. Candid Memory 4 -->
       <div class="gallery-item" data-category="couple">
-        <img src="assets/images/gallery-4.jpg" alt="Together in Love" class="gallery-img" loading="lazy">
+        <img src="assets/images/gallery-4.jpg" alt="Together in Love" class="gallery-img" loading="lazy" decoding="async">
         <div class="gallery-overlay">
           <span class="gallery-caption">✦ Together in Love</span>
         </div>
@@ -543,7 +564,7 @@
 
       <!-- 9. Candid Memory 5 -->
       <div class="gallery-item" data-category="couple moments">
-        <img src="assets/images/gallery-5.jpg" alt="Endless Horizons" class="gallery-img" loading="lazy">
+        <img src="assets/images/gallery-5.jpg" alt="Endless Horizons" class="gallery-img" loading="lazy" decoding="async">
         <div class="gallery-overlay">
           <span class="gallery-caption">✦ Endless Horizons</span>
         </div>
@@ -551,7 +572,7 @@
 
       <!-- 10. Candid Memory 6 -->
       <div class="gallery-item" data-category="couple">
-        <img src="assets/images/gallery-6.jpg" alt="Bound in Love" class="gallery-img" loading="lazy">
+        <img src="assets/images/gallery-6.jpg" alt="Bound in Love" class="gallery-img" loading="lazy" decoding="async">
         <div class="gallery-overlay">
           <span class="gallery-caption">✦ Bound in Love</span>
         </div>
@@ -559,7 +580,7 @@
 
       <!-- 11. Couple Art Illustration -->
       <div class="gallery-item" data-category="moments">
-        <img src="assets/images/couple-illustration.png" alt="Couple Art Illustration" class="gallery-img" loading="lazy">
+        <img src="assets/images/couple-illustration.png" alt="Couple Art Illustration" class="gallery-img" loading="lazy" decoding="async">
         <div class="gallery-overlay">
           <span class="gallery-caption">✦ Artistic Harmony</span>
         </div>
@@ -578,21 +599,18 @@
   </div>
 
   <!-- ======================================================================
-       8. RSVP & CELEBRATION WISHES STATION
-       Metaphor: "The Magic Wish Lever & RSVP Mailbox"
+       8. RSVP & BLESSINGS BURST STATION
        ====================================================================== -->
-  <section id="rsvp" class="section-wrapper animate-on-scroll">
+  <section id="rsvp" class="section-wrapper">
     <div class="section-header">
       <span class="section-script-tag">Celebrate With Us</span>
-      <h3 class="section-main-title">RSVP &amp; Blessings</h3>
+      <h3 class="section-malayalam-heading">നിങ്ങളുടെ അനുഗ്രഹങ്ങളും ആശംസകളും</h3>
+      <p class="section-main-title">RSVP &amp; Blessings</p>
       <div class="section-divider">
         <span class="divider-line"></span>
         <span class="divider-ornament">💖</span>
         <span class="divider-line"></span>
       </div>
-      <p class="section-subtitle">
-        Your presence and prayers will make our celebration truly complete.
-      </p>
     </div>
 
     <div class="interactive-cards-grid">
@@ -605,20 +623,21 @@
                 <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
               </svg>
             </div>
-            <h4 class="card-top-title">Confirm Attendance</h4>
-            <p class="card-top-desc">Let Dennis and Anu know you are attending with a single tap on WhatsApp.</p>
+            <h4 class="card-top-title-malayalam">വരവിവരം അറിയിക്കുക</h4>
+            <p class="card-top-title-en">Confirm Attendance on WhatsApp</p>
+            <p class="card-top-desc">നിങ്ങളുടെ സാന്നിധ്യം മുൻകൂട്ടി വാട്സാപ്പിലൂടെ അറിയിക്കാവുന്നതാണ്.</p>
           </div>
         </div>
 
         <a 
-          href="https://wa.me/?text=Dear%20Dennis%20%26%20Anu,%20I%20am%20delighted%20to%20attend%20your%20wedding%20on%20November%2021,%202026!%20Hearty%20congratulations%20and%20prayers!" 
+          href="https://wa.me/?text=Dear%20Dennis%20%26%20Anu,%20ഞങ്ങൾ%20വിവാഹത്തിൽ%20സന്തോഷത്തോടെ%20പങ്കെടുക്കും!%20ഹൃദയം%20നിറഞ്ഞ%20വിവാഹാശംസകൾ%20നേരുന്നു!" 
           target="_blank" 
           rel="noopener noreferrer" 
           class="btn-whatsapp">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.124-.515-1.742-.723-2.859-2.508-2.946-2.624-.087-.116-.708-.942-.708-1.796 0-.855.449-1.275.609-1.448.16-.174.348-.217.464-.217.116 0 .232.002.333.007.106.005.249-.04.39.298.144.347.491 1.2.534 1.288.043.088.072.19.014.305-.058.116-.087.188-.174.289-.087.102-.183.228-.261.306-.087.087-.179.182-.077.357.101.174.453.748.971 1.21.668.596 1.232.781 1.406.868.174.087.275.072.377-.044.101-.116.435-.508.55-.682.116-.174.232-.145.39-.087.16.058 1.015.479 1.189.566.174.087.29.13.333.203.043.072.043.42-.101.825z"></path>
           </svg>
-          Quick RSVP via WhatsApp
+          വാട്സാപ്പിൽ അറിയിക്കുക &bull; RSVP via WhatsApp
         </a>
       </div>
 
@@ -631,20 +650,21 @@
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
               </svg>
             </div>
-            <h4 class="card-top-title">Shower Love &amp; Blessings</h4>
-            <p class="card-top-desc">Tap the golden heart to shower confetti &amp; send your love.</p>
+            <h4 class="card-top-title-malayalam">ഹൃദയം നിറഞ്ഞ ആശംസകൾ</h4>
+            <p class="card-top-title-en">Shower Love &amp; Blessings</p>
+            <p class="card-top-desc">താഴെയുള്ള ഹൃദയത്തിൽ തൊട്ട് നവമിഥുനങ്ങൾക്ക് നിങ്ങളുടെ അനുഗ്രഹങ്ങൾ പകരുക.</p>
           </div>
         </div>
 
         <div class="burst-counter-display">
-          <span>Total Blessings Sent:</span>
+          <span>ലഭിച്ച പ്രാർത്ഥനകൾ:</span>
           <span id="wish-counter" class="burst-counter-number">142</span>
         </div>
 
         <button id="heart-burst-btn" class="btn-heart-burst" title="Tap to Shower Love & Confetti">
           ❤️
         </button>
-        <p class="burst-caption">Tap to trigger hearts &amp; golden sparkles!</p>
+        <p class="burst-caption-malayalam">സ്വർണ്ണ നക്ഷത്രങ്ങളും സ്നേഹവും ചൊരിയൂ!</p>
       </div>
     </div>
   </section>
@@ -653,8 +673,11 @@
        9. FOOTER SECTION
        ====================================================================== -->
   <footer class="footer-section">
-    <div class="footer-monogram">D &amp; A</div>
-    <p class="footer-quote">
+    <div class="footer-monogram">D ✠ A</div>
+    <p class="footer-quote-malayalam">
+      “സ്നേഹത്തിലും വിശ്വാസത്തിലും ഒന്നായി തീരുന്ന രണ്ടു ഹൃദയങ്ങൾ”
+    </p>
+    <p class="footer-quote-en">
       “Two lives, two hearts, joined together in friendship, united forever in love.”
     </p>
     <p class="footer-copyright">
@@ -664,7 +687,6 @@
 
   <!-- ======================================================================
        10. MOBILE QUICK ACCESS BOTTOM BAR
-       Thumb-friendly navigation for effortless smartphone scrolling
        ====================================================================== -->
   <nav class="mobile-quick-bar" aria-label="Mobile Navigation">
     <a href="#hero" class="quick-bar-item active">
@@ -672,19 +694,19 @@
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
         <polyline points="9 22 9 12 15 12 15 22"></polyline>
       </svg>
-      <span>Home</span>
+      <span>ആമുഖം</span>
     </a>
     <a href="#couple" class="quick-bar-item">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
       </svg>
-      <span>Couple</span>
+      <span>ദമ്പതികൾ</span>
     </a>
     <a href="#church" class="quick-bar-item">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
         <path d="M12 2l3 7h7l-5.5 4.5 2 7.5-6.5-4.5-6.5 4.5 2-7.5L2 9h7z"></path>
       </svg>
-      <span>Venue</span>
+      <span>ദേവാലയം</span>
     </a>
     <a href="#gallery" class="quick-bar-item">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
@@ -692,27 +714,22 @@
         <circle cx="8.5" cy="8.5" r="1.5"></circle>
         <polyline points="21 15 16 10 5 21"></polyline>
       </svg>
-      <span>Gallery</span>
+      <span>ചിത്രങ്ങൾ</span>
     </a>
     <a href="#rsvp" class="quick-bar-item">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
         <path d="M22 2L11 13"></path>
         <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
       </svg>
-      <span>RSVP</span>
+      <span>ആശംസകൾ</span>
     </a>
   </nav>
 
   <!-- ======================================================================
-       SCRIPTS
+       SCRIPTS (Optimized 60fps)
        ====================================================================== -->
-  <!-- 1. Canvas Rose Petal & Bokeh Engine -->
   <script src="assets/js/canvas-petals.js"></script>
-
-  <!-- 2. Romantic Audio Player & Wax Seal Engine -->
   <script src="assets/js/audio-player.js"></script>
-
-  <!-- 3. Countdown, Lightbox, Confetti Wishes & Interactions -->
   <script src="assets/js/main.js"></script>
 
 </body>
