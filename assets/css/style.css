@@ -812,17 +812,17 @@ img {
 
 .profile-photo-wrapper {
   position: relative;
-  width: 164px;
-  height: 164px;
-  margin-bottom: 20px;
+  width: 180px;
+  height: 180px;
+  margin-bottom: 24px;
   flex-shrink: 0;
 }
 
 .photo-glow-ring {
   position: absolute;
-  top: -8px; left: -8px; right: -8px; bottom: -8px;
+  top: -10px; left: -10px; right: -10px; bottom: -10px;
   border-radius: 50%;
-  border: 1.5px dashed rgba(78, 107, 88, 0.5);
+  border: 1.5px dashed rgba(78, 107, 88, 0.45);
   animation: rotateWreath 28s linear infinite;
 }
 
@@ -831,20 +831,42 @@ img {
   position: absolute;
   top: 5px; left: 5px; right: 5px; bottom: 5px;
   border-radius: 50%;
-  border: 1px solid rgba(201, 168, 76, 0.3);
+  border: 1.5px solid rgba(201, 168, 76, 0.35);
+}
+
+/* Gold halo ring behind photo */
+.photo-glow-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: conic-gradient(
+    rgba(201,168,76,0.55) 0deg,
+    rgba(240,217,138,0.9) 90deg,
+    rgba(201,168,76,0.55) 180deg,
+    rgba(165,127,42,0.7) 270deg,
+    rgba(201,168,76,0.55) 360deg
+  );
+  z-index: 0;
+  animation: rotateWreath 8s linear infinite;
 }
 
 .profile-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%;
   border-radius: 50%;
-  border: 3.5px solid #FFFFFF;
-  box-shadow: 0 8px 26px rgba(35, 28, 20, 0.14);
+  border: 4px solid #FFFFFF;
+  box-shadow:
+    0 8px 28px rgba(35, 28, 20, 0.18),
+    0 0 0 1px rgba(201, 168, 76, 0.2);
   display: block;
-  /* FIX: Read EXIF orientation so portrait photos show upright */
+  position: relative;
+  z-index: 1;
+  /* Corrects EXIF rotation from phones — makes portrait straight */
   image-orientation: from-image;
+  transform: rotate(0deg);
 }
 
 .profile-role-tag {
@@ -867,68 +889,111 @@ img {
 
 .profile-name {
   font-family: 'Italiana', Georgia, serif;
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 400;
   color: var(--sage-dark);
   text-align: center;
-  margin-bottom: 3px;
-  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+/* Thin gold line under name */
+.profile-name::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+  margin: 6px auto 0;
+  border-radius: 2px;
 }
 
 .profile-profession {
   font-family: var(--font-sans);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--gold-rich);
   font-weight: 600;
   text-align: center;
-  line-height: 1.45;
-  margin-bottom: 20px;
-  padding: 0 4px;
+  line-height: 1.5;
+  margin-bottom: 22px;
+  padding: 0 8px;
+  letter-spacing: 0.02em;
 }
 
+.profile-profession small {
+  font-size: 0.74rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* ── Family Info List ── */
 .family-info-list {
-  background: var(--bg-warm);
-  border: 1px solid rgba(78, 107, 88, 0.15);
+  background: linear-gradient(145deg, #FDFAF5 0%, #F8F3EB 100%);
+  border: 1px solid rgba(201, 168, 76, 0.2);
   border-radius: var(--radius-md);
-  padding: 16px;
+  padding: 6px 0;
   display: flex;
   flex-direction: column;
-  gap: 13px;
   width: 100%;
+  overflow: hidden;
 }
 
 .info-item {
   display: flex;
   align-items: flex-start;
-  gap: 11px;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(78, 107, 88, 0.08);
+  transition: background 0.2s ease;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-item:hover {
+  background: rgba(78, 107, 88, 0.05);
+}
+
+/* Icon circle badge */
+.info-icon-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(78, 107, 88, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .info-icon {
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
   color: var(--sage-primary);
-  margin-top: 2px;
 }
 
-.info-content { flex: 1; }
+.info-content { flex: 1; min-width: 0; }
 
 .info-title {
   font-family: var(--font-sans);
-  font-size: 0.64rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  color: var(--sage-primary);
   font-weight: 700;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
+  opacity: 0.85;
 }
 
 .info-value {
   font-family: var(--font-sans);
   color: var(--text-primary);
   font-weight: 500;
-  line-height: 1.45;
-  font-size: 0.85rem;
+  line-height: 1.5;
+  font-size: 0.86rem;
 }
 
 .info-value strong {
