@@ -13,10 +13,10 @@
   <meta property="og:image" content="assets/images/couple-hero.jpg">
   <meta property="og:type" content="website">
 
-  <!-- Authentic Royal Typography: Pinyon Script (Bespoke Hand Calligraphy), Italiana & Marcellus (Luxury High-Couture Serifs), Plus Jakarta Sans (Crisp Modern Sans) -->
+  <!-- Google Fonts: Anek Malayalam (BKU Movie Title Weight), Pinyon Script (Calligraphy), Italiana & Marcellus (Serif), Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Marcellus&family=Pinyon+Script&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@700;800;900&family=Italiana&family=Marcellus&family=Pinyon+Script&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Main Design System CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -31,27 +31,67 @@
   <canvas id="petal-canvas"></canvas>
 
   <!-- ======================================================================
-       1. ROYAL ENVELOPE / WAX SEAL OPENING SCREEN
-       Warm tactile luxury envelope with 3D crimson wax seal & gold monogram
+       1. ROYAL ENVELOPE / OPENING SCREEN (MATCHING REFERENCE IMAGE 1: JUNIPER SUITE)
+       Botanical Juniper / Olive Wreath, Indigo Berries, and Vintage Key Button
        ====================================================================== -->
   <div id="royal-curtain" class="royal-curtain">
-    <div class="envelope-card">
-      <div id="envelope-monogram" class="envelope-monogram" title="Tap to Break Seal & Unfold">
-        <div class="monogram-pulse"></div>
-        D&amp;A
+    <div class="juniper-suite-card">
+      <!-- Top-Left Botanical Branch -->
+      <svg class="botanical-corner botanical-corner-tl" viewBox="0 0 100 100" fill="none">
+        <path d="M5 5 C25 25, 45 35, 95 38" stroke="#526B5C" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M5 5 C15 35, 30 55, 40 95" stroke="#526B5C" stroke-width="1.8" stroke-linecap="round"/>
+        <!-- Juniper Berries -->
+        <circle cx="28" cy="22" r="4.5" fill="#2C3E50"/>
+        <circle cx="48" cy="36" r="4" fill="#2C3E50"/>
+        <circle cx="24" cy="50" r="4.5" fill="#2C3E50"/>
+        <circle cx="36" cy="74" r="4" fill="#2C3E50"/>
+        <!-- Leaves -->
+        <path d="M22 16 C30 14, 38 18, 36 24 C30 24, 22 20, 22 16Z" fill="#7E9988"/>
+        <path d="M42 28 C50 26, 58 30, 56 36 C50 36, 42 32, 42 28Z" fill="#526B5C"/>
+        <path d="M16 38 C14 46, 18 54, 24 52 C24 46, 20 38, 16 38Z" fill="#7E9988"/>
+        <path d="M28 60 C26 68, 30 76, 36 74 C36 68, 32 60, 28 60Z" fill="#526B5C"/>
+      </svg>
+
+      <!-- Bottom-Right Botanical Branch -->
+      <svg class="botanical-corner botanical-corner-br" viewBox="0 0 100 100" fill="none">
+        <path d="M5 5 C25 25, 45 35, 95 38" stroke="#526B5C" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M5 5 C15 35, 30 55, 40 95" stroke="#526B5C" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="28" cy="22" r="4.5" fill="#2C3E50"/>
+        <circle cx="48" cy="36" r="4" fill="#2C3E50"/>
+        <circle cx="24" cy="50" r="4.5" fill="#2C3E50"/>
+        <circle cx="36" cy="74" r="4" fill="#2C3E50"/>
+        <path d="M22 16 C30 14, 38 18, 36 24 C30 24, 22 20, 22 16Z" fill="#7E9988"/>
+        <path d="M42 28 C50 26, 58 30, 56 36 C50 36, 42 32, 42 28Z" fill="#526B5C"/>
+      </svg>
+
+      <!-- Central Botanical Wreath with Monogram -->
+      <div class="juniper-wreath-container" id="envelope-monogram" title="Tap to Open">
+        <svg class="juniper-wreath-svg" viewBox="0 0 150 150">
+          <circle cx="75" cy="75" r="62" stroke="#C5A059" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
+          <circle cx="75" cy="75" r="56" stroke="#526B5C" stroke-width="0.8" fill="none"/>
+          <!-- Wreath Berries -->
+          <circle cx="38" cy="38" r="3.5" fill="#2C3E50"/>
+          <circle cx="112" cy="38" r="3.5" fill="#2C3E50"/>
+          <circle cx="38" cy="112" r="3.5" fill="#2C3E50"/>
+          <circle cx="112" cy="112" r="3.5" fill="#2C3E50"/>
+          <circle cx="75" cy="18" r="4" fill="#C5A059"/>
+          <circle cx="75" cy="132" r="4" fill="#C5A059"/>
+        </svg>
+        <span class="juniper-monogram">D &amp; A</span>
       </div>
-      <p class="envelope-pretitle">With Joyful Hearts</p>
-      <h1 class="envelope-couple">
-        Dennis Mathew
-        <span>&amp;</span>
-        Anu George
-      </h1>
-      <p class="envelope-message">
-        Cordially request the honor of your presence and prayers as they unite in Holy Matrimony.
+
+      <p class="juniper-pretitle">Welcome to the Wedding of</p>
+      <h1 class="juniper-couple">Dennis &amp; Anu</h1>
+      <p class="juniper-invite-text">
+        Together with their beloved families, invite you to share in the joy and blessing of their holy matrimony.
       </p>
-      <p class="envelope-date-tag">✦ Saturday • November 21, 2026 ✦</p>
-      <button id="open-seal-btn" class="open-seal-btn">
-        <span>💌</span> Unfold Invitation
+      <p class="juniper-date-badge">✦ Saturday • November 21, 2026 ✦</p>
+
+      <button id="open-seal-btn" class="btn-juniper-open">
+        <svg class="vintage-key-icon" viewBox="0 0 24 24">
+          <path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+        </svg>
+        Open Invitation
       </button>
     </div>
   </div>
@@ -76,56 +116,151 @@
   </div>
 
   <!-- ======================================================================
-       3. HERO / OPENING SECTION
-       Grand entrance with timeless serif typography, date & live countdown
-       (Scroll down indicator intentionally omitted for clean aesthetic)
+       3. HERO SECTION (MATCHING REFERENCE IMAGE 2)
+       Photo Hug, BKU Movie Title Typography, Iconic Date Plaque & 5 Circular Actions
        ====================================================================== -->
-  <section id="hero" class="hero-section">
-    <div class="hero-background-art"></div>
-
-    <div class="royal-badge">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+  <section id="hero" class="hero-wrapper-ref2">
+    <div class="hero-card-ref2">
+      <!-- Top-Left White Rose & Eucalyptus Botanical Sprig -->
+      <svg class="hero-top-floral" viewBox="0 0 140 140" fill="none">
+        <!-- Eucalyptus leaves -->
+        <path d="M0 20 C25 25, 45 40, 60 70" stroke="#7E9988" stroke-width="2"/>
+        <path d="M15 10 C35 30, 40 55, 30 85" stroke="#526B5C" stroke-width="1.8"/>
+        <!-- White Rose Petals -->
+        <circle cx="28" cy="28" r="18" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1"/>
+        <circle cx="28" cy="28" r="12" fill="#FAF8F5" stroke="#D5CEC4" stroke-width="0.8"/>
+        <circle cx="28" cy="28" r="6" fill="#F3EFE9"/>
+        <!-- Soft Leaf accents -->
+        <path d="M35 15 C45 8, 55 12, 52 22 C45 22, 38 18, 35 15Z" fill="#7E9988"/>
+        <path d="M12 35 C6 44, 10 54, 20 52 C20 44, 15 37, 12 35Z" fill="#526B5C"/>
+        <path d="M42 36 C54 38, 58 48, 52 56 C46 52, 42 44, 42 36Z" fill="#7E9988"/>
       </svg>
-      <span>The Wedding Celebration</span>
-    </div>
 
-    <div class="hero-names-container">
-      <h2 class="hero-name">Dennis Mathew</h2>
-      <span class="hero-ampersand">&amp;</span>
-      <h2 class="hero-name">Anu George</h2>
-    </div>
-
-    <p class="hero-subtitle">Together with their beloved families, invite you to celebrate their union</p>
-
-    <!-- Auspicious Date Plaque -->
-    <div class="hero-date-card">
-      <span class="hero-date-day">Saturday</span>
-      <span class="hero-date-full">November 21, 2026</span>
-      <span class="hero-date-location">St. Maria Goretti Church, Thopramkudy</span>
-    </div>
-
-    <!-- Live Countdown Timer -->
-    <div class="countdown-container">
-      <p class="countdown-title">Counting Down to the Blessed Moment</p>
-      <div class="countdown-grid">
-        <div class="countdown-box">
-          <span id="count-days" class="countdown-number">00</span>
-          <span class="countdown-label">Days</span>
-        </div>
-        <div class="countdown-box">
-          <span id="count-hours" class="countdown-number">00</span>
-          <span class="countdown-label">Hours</span>
-        </div>
-        <div class="countdown-box">
-          <span id="count-minutes" class="countdown-number">00</span>
-          <span class="countdown-label">Mins</span>
-        </div>
-        <div class="countdown-box">
-          <span id="count-seconds" class="countdown-number">00</span>
-          <span class="countdown-label">Secs</span>
-        </div>
+      <!-- Top Scripture Verse (Reference 2 style) -->
+      <div class="hero-scripture-top">
+        <blockquote class="hero-scripture-text">
+          “Above all, clothe yourselves with love, which binds us all together in perfect harmony.”
+        </blockquote>
+        <cite class="hero-scripture-ref">Colossians 3:14</cite>
       </div>
+
+      <!-- Main Photo Frame: Dennis & Anu Sunset Photo (wedding-backdrop.png) -->
+      <div class="hero-photo-frame">
+        <img src="assets/images/wedding-backdrop.png" alt="Dennis Mathew & Anu George" class="hero-hug-img">
+        <div class="hero-photo-fade"></div>
+      </div>
+
+      <!-- Couple Names: BKU Movie Title Style Malayalam + English Script -->
+      <div class="hero-couple-names-wrap">
+        <h1 class="bku-malayalam-title">
+          ഡെന്നിസ് <span class="bku-amp">&amp;</span> അനു
+        </h1>
+        <span class="hero-english-script">Dennis &amp; Anu</span>
+      </div>
+
+      <!-- Invitation Decree -->
+      <p class="hero-decree-text">
+        With the blessing of God and their parents, joyfully invite you to celebrate their holy matrimony
+      </p>
+
+      <!-- The Iconic Date Plaque (Exact Match to Reference 2) -->
+      <div class="ref2-date-plaque">
+        <span class="ref2-day-arc">S A T U R D A Y</span>
+        <div class="ref2-date-grid">
+          <span class="ref2-date-month">Nov</span>
+          <span class="ref2-date-num">21</span>
+          <span class="ref2-date-year">2026</span>
+        </div>
+        <p class="ref2-time-banner">— at 10:30 AM IST —</p>
+      </div>
+
+      <!-- Venue Line -->
+      <div class="ref2-venue-wrap">
+        <h3 class="ref2-venue-name">St. Maria Goretti Syro-Malabar Church</h3>
+        <p class="ref2-venue-addr">Thopramkudy, Idukki District, Kerala</p>
+      </div>
+
+      <!-- The 5 Circular Action Buttons (Exact Match to Reference 2) -->
+      <div class="ref2-icons-row">
+        <!-- 1. Ceremony Venue (Church) -->
+        <a href="#church" class="ref2-action-col" title="Church Solemnisation Venue">
+          <div class="ref2-circle-btn">
+            <svg class="ref2-btn-svg" viewBox="0 0 24 24">
+              <!-- Church Icon -->
+              <path d="M12 2v5M10 4.5h4M4 11l8-5 8 5v10H4V11zM10 21v-5a2 2 0 0 1 4 0v5"/>
+            </svg>
+          </div>
+          <span class="ref2-action-label">Ceremony<br>Venue</span>
+        </a>
+
+        <!-- 2. Reception & Feast -->
+        <a href="#schedule" class="ref2-action-col" title="Reception & Feast Timings">
+          <div class="ref2-circle-btn">
+            <svg class="ref2-btn-svg" viewBox="0 0 24 24">
+              <!-- Canopy / Reception Tent Icon -->
+              <path d="M3 10l9-7 9 7v2H3v-2zM5 12v9M19 12v9M12 12v9M8 12c0 2 2 3 4 3s4-1 4-3"/>
+            </svg>
+          </div>
+          <span class="ref2-action-label">Reception<br>Feast</span>
+        </a>
+
+        <!-- 3. Confirm RSVP via WhatsApp -->
+        <a href="https://wa.me/?text=Dear%20Dennis%20%26%20Anu,%20I%20am%20delighted%20to%20attend%20your%20wedding%20on%20November%2021,%202026!%20Hearty%20congratulations%20and%20prayers!" target="_blank" rel="noopener noreferrer" class="ref2-action-col" title="Confirm Attendance on WhatsApp">
+          <div class="ref2-circle-btn">
+            <svg class="ref2-btn-svg" viewBox="0 0 24 24">
+              <!-- Checkmark / RSVP Guest Icon -->
+              <circle cx="12" cy="7" r="4"/>
+              <path d="M5 21v-2a4 4 0 0 1 7-2.8M15 19l2 2 4-4"/>
+            </svg>
+          </div>
+          <span class="ref2-action-label">Confirm<br>RSVP</span>
+        </a>
+
+        <!-- 4. Add to Calendar -->
+        <a href="#" id="btn-hero-calendar" class="ref2-action-col" title="Add to Google or Apple Calendar">
+          <div class="ref2-circle-btn">
+            <svg class="ref2-btn-svg" viewBox="0 0 24 24">
+              <!-- Calendar / Event Icon -->
+              <rect x="3" y="4" width="18" height="18" rx="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+              <circle cx="12" cy="15" r="1.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="ref2-action-label">Save<br>Date</span>
+        </a>
+
+        <!-- 5. Send Wishes / Love -->
+        <a href="#rsvp" class="ref2-action-col" title="Shower Love & Confetti Wishes">
+          <div class="ref2-circle-btn">
+            <svg class="ref2-btn-svg" viewBox="0 0 24 24">
+              <!-- Heart / Gift Wishes Icon -->
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <span class="ref2-action-label">Send<br>Wishes</span>
+        </a>
+      </div>
+
+      <!-- Touch Prompt Helper -->
+      <div class="ref2-touch-prompt">
+        <svg class="ref2-touch-icon" viewBox="0 0 24 24">
+          <path d="M9 11.24V7.5a2.5 2.5 0 0 1 5 0v3.74c1.21-.81 2-2.18 2-3.74a4.5 4.5 0 0 0-9 0c0 1.56.79 2.93 2 3.74zM16.5 13.5v-2a1.5 1.5 0 0 0-3 0v4.79l-2.08-.43a1.53 1.53 0 0 0-1.8 1.15l-.22 1.08 4.24 4.24c.56.56 1.33.88 2.12.88h4.55c1.66 0 3-1.34 3-3v-5.21a1.5 1.5 0 0 0-1.5-1.5h-5.31z"/>
+        </svg>
+        <span>Touch the icons to explore details</span>
+      </div>
+
+      <!-- Bottom-Right White Rose & Eucalyptus Sprig -->
+      <svg class="hero-bottom-floral" viewBox="0 0 140 140" fill="none">
+        <path d="M140 120 C115 115, 95 100, 80 70" stroke="#7E9988" stroke-width="2"/>
+        <path d="M125 130 C105 110, 100 85, 110 55" stroke="#526B5C" stroke-width="1.8"/>
+        <circle cx="112" cy="112" r="18" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1"/>
+        <circle cx="112" cy="112" r="12" fill="#FAF8F5" stroke="#D5CEC4" stroke-width="0.8"/>
+        <circle cx="112" cy="112" r="6" fill="#F3EFE9"/>
+        <path d="M105 125 C95 132, 85 128, 88 118 C95 118, 102 122, 105 125Z" fill="#7E9988"/>
+        <path d="M128 105 C134 96, 130 86, 120 88 C120 96, 125 103, 128 105Z" fill="#526B5C"/>
+      </svg>
     </div>
   </section>
 

@@ -208,10 +208,14 @@ document.addEventListener('DOMContentLoaded', () => {
   /* --------------------------------------------------------------------------
      5. ADD TO CALENDAR (.ICS & GOOGLE CALENDAR)
      -------------------------------------------------------------------------- */
-  const addToCalendarBtn = document.getElementById('btn-add-calendar');
+  const calButtons = [
+    document.getElementById('btn-add-calendar'),
+    document.getElementById('btn-hero-calendar')
+  ];
 
-  if (addToCalendarBtn) {
-    addToCalendarBtn.addEventListener('click', (e) => {
+  calButtons.forEach(btn => {
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
       e.preventDefault();
 
       const event = {
@@ -224,10 +228,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const googleCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${event.start}/${event.end}&details=${encodeURIComponent(event.details)}&location=${encodeURIComponent(event.location)}`;
 
-      // Ask user or default to Google Calendar / .ics file download
       window.open(googleCalUrl, '_blank');
     });
-  }
+  });
 
   /* --------------------------------------------------------------------------
      6. MOBILE QUICK NAVIGATION BAR ACTIVE STATE
