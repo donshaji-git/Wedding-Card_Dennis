@@ -122,13 +122,17 @@
 
     startMusic();
 
+    if (navigator.vibrate) {
+      navigator.vibrate(60);
+    }
+
     // Trigger initial celebration sparkle
     if (window.confetti) {
       window.confetti({
-        particleCount: 50,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#D4AF37', '#F5E6BE', '#FFFFFF', '#E8A598']
+        particleCount: 55,
+        spread: 75,
+        origin: { y: 0.55 },
+        colors: ['#C5A059', '#EBD49F', '#FFFFFF', '#D9A79E', '#9E2A2B']
       });
     }
   }

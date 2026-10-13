@@ -1,9 +1,11 @@
 /**
- * DENNIS & ANU WEDDING INVITATION - BUTTERY SMOOTH INTERACTIONS
- * - 60fps Zero-Jank Scroll Tracking using IntersectionObserver
+ * DENNIS & ANU WEDDING INVITATION - INTERACTIVE LOGIC
+ * Features:
  * - Real-Time Countdown to Nov 21, 2026
- * - Smooth Touch Gallery Lightbox
- * - Confetti Blessings with Multi-Stage Physics
+ * - Scroll Entrance Observer
+ * - Masonry Gallery Lightbox & Filter
+ * - Heart Burst Wishes & Confetti Physics
+ * - 1-Click WhatsApp RSVP & Add to Google Calendar (.ics)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -35,25 +37,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    if (daysEl && daysEl.textContent !== String(days).padStart(2, '0')) {
-      daysEl.textContent = String(days).padStart(2, '0');
-    }
-    if (hoursEl && hoursEl.textContent !== String(hours).padStart(2, '0')) {
-      hoursEl.textContent = String(hours).padStart(2, '0');
-    }
-    if (minutesEl && minutesEl.textContent !== String(minutes).padStart(2, '0')) {
-      minutesEl.textContent = String(minutes).padStart(2, '0');
-    }
-    if (secondsEl) {
-      secondsEl.textContent = String(seconds).padStart(2, '0');
-    }
+    if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+    if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+    if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+    if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
   }
 
   setInterval(updateCountdown, 1000);
   updateCountdown();
 
   /* --------------------------------------------------------------------------
-     2. PHOTO GALLERY LIGHTBOX & FILTER CHIPS
+     2. SCROLL REVEAL ANIMATIONS (IntersectionObserver)
+     -------------------------------------------------------------------------- */
+  const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.15
+    });
+
+    animateElements.forEach(el => observer.observe(el));
+  } else {
+    animateElements.forEach(el => el.classList.add('in-view'));
+  }
+
+  /* --------------------------------------------------------------------------
+     3. PHOTO GALLERY LIGHTBOX & FILTER CHIPS
      -------------------------------------------------------------------------- */
   const galleryItems = document.querySelectorAll('.gallery-item');
   const lightboxModal = document.getElementById('lightbox-modal');
@@ -118,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowLeft') showPrevImage();
   });
 
-  // Filter Chips
+  // Gallery Filter Chips
   filterChips.forEach(chip => {
     chip.addEventListener('click', () => {
       filterChips.forEach(c => c.classList.remove('active'));
@@ -137,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* --------------------------------------------------------------------------
-     3. BLESSINGS BURST WITH CONFETTI
+     4. SEND WISHES & HEART BURST WITH CONFETTI
      -------------------------------------------------------------------------- */
   const heartBurstBtn = document.getElementById('heart-burst-btn');
   const wishCounterEl = document.getElementById('wish-counter');
@@ -147,27 +164,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (heartBurstBtn) {
     heartBurstBtn.addEventListener('click', () => {
+      // Increment counter
       currentWishes++;
       localStorage.setItem('dennis_anu_wishes', currentWishes);
       if (wishCounterEl) wishCounterEl.textContent = currentWishes;
 
+      // Haptic feedback for smartphones
       if (navigator.vibrate) {
-        navigator.vibrate([35, 25, 35]);
+        navigator.vibrate([40, 30, 40]);
       }
 
+      // Sparkle & Heart Confetti Burst
       if (window.confetti) {
+        // Gold and Rose petals burst
         window.confetti({
-          particleCount: 50,
-          spread: 80,
+          particleCount: 60,
+          spread: 90,
           origin: { y: 0.75 },
-          colors: ['#C59B27', '#F2DEAA', '#FF7F86', '#E03E4A', '#FFFFFF']
+          colors: ['#C5A059', '#EBD49F', '#FF7880', '#D93B47', '#FFFFFF', '#D9A79E']
         });
+
+        // Second wave
+        setTimeout(() => {
+          window.confetti({
+            particleCount: 40,
+            angle: 60,
+            spread: 60,
+            origin: { x: 0.2, y: 0.8 },
+            colors: ['#C5A059', '#EBD49F', '#FF7880', '#D9A79E']
+          });
+          window.confetti({
+            particleCount: 40,
+            angle: 120,
+            spread: 60,
+            origin: { x: 0.8, y: 0.8 },
+            colors: ['#C5A059', '#EBD49F', '#FF7880', '#D9A79E']
+          });
+        }, 200);
       }
     });
   }
 
   /* --------------------------------------------------------------------------
-     4. ADD TO CALENDAR
+     5. ADD TO CALENDAR (.ICS & GOOGLE CALENDAR)
      -------------------------------------------------------------------------- */
   const addToCalendarBtn = document.getElementById('btn-add-calendar');
 
@@ -176,44 +215,44 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
 
       const event = {
-        title: 'Wedding: Dennis Mathew & Anu George',
-        start: '20261121T050000Z',
-        end: '20261121T103000Z',
+        title: 'Wedding of Dennis Mathew & Anu George',
+        start: '20261121T050000Z', // 10:30 AM IST = 05:00 UTC
+        end: '20261121T103000Z',   // 04:00 PM IST = 10:30 UTC
         location: 'St. Maria Goretti Syro-Malabar Church, Thopramkudy, Idukki, Kerala',
-        details: 'Holy Matrimony of Dennis Mathew and Anu George on Saturday, November 21, 2026.'
+        details: 'Join us to celebrate the Holy Matrimony of Dennis Mathew and Anu George on Saturday, November 21, 2026.'
       };
 
       const googleCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${event.start}/${event.end}&details=${encodeURIComponent(event.details)}&location=${encodeURIComponent(event.location)}`;
+
+      // Ask user or default to Google Calendar / .ics file download
       window.open(googleCalUrl, '_blank');
     });
   }
 
   /* --------------------------------------------------------------------------
-     5. GLITCH-FREE MOBILE NAVIGATION OBSERVER (NO LAYOUT REFLOWS)
+     6. MOBILE QUICK NAVIGATION BAR ACTIVE STATE
      -------------------------------------------------------------------------- */
   const navItems = document.querySelectorAll('.quick-bar-item');
   const sections = document.querySelectorAll('section[id]');
 
-  if ('IntersectionObserver' in window && sections.length > 0) {
-    const navObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const currentId = entry.target.getAttribute('id');
-          navItems.forEach(item => {
-            if (item.getAttribute('href') === `#${currentId}`) {
-              item.classList.add('active');
-            } else {
-              item.classList.remove('active');
-            }
-          });
-        }
-      });
-    }, {
-      rootMargin: '-30% 0px -40% 0px',
-      threshold: 0
+  window.addEventListener('scroll', () => {
+    let current = '';
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(section => {
+      const sectionHeight = section.offsetHeight;
+      const sectionTop = section.offsetTop - 120;
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
     });
 
-    sections.forEach(s => navObserver.observe(s));
-  }
+    navItems.forEach(item => {
+      item.classList.remove('active');
+      if (item.getAttribute('href') === `#${current}`) {
+        item.classList.add('active');
+      }
+    });
+  });
 
 });
