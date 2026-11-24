@@ -12,9 +12,10 @@
   const envelopeMonogram = document.getElementById('envelope-monogram');
 
   let audio = new Audio();
-  audio.src = 'assets/audio/wedding-bgm.wav';
+  audio.src = 'assets/audio/Varnajaalam.mp3';
   audio.loop = true;
   audio.preload = 'auto';
+  audio.volume = 0.75;
 
   let isPlaying = false;
   let isMuted = false;
@@ -137,12 +138,41 @@
     }
   }
 
+  const switchToggle = document.getElementById('switch');
+  let isUnlocking = false;
+
+  function triggerAnimatedUnlock() {
+    if (isUnlocking) return;
+    isUnlocking = true;
+    if (switchToggle && !switchToggle.checked) {
+      switchToggle.checked = true;
+    }
+    // Allow the 0.5s check-animation to glide the bead and turn green before curtain opens
+    setTimeout(() => {
+      unlockInvitation();
+    }, 450);
+  }
+
+  if (switchToggle) {
+    switchToggle.addEventListener('change', () => {
+      if (switchToggle.checked) {
+        triggerAnimatedUnlock();
+      }
+    });
+  }
+
   if (openSealBtn) {
-    openSealBtn.addEventListener('click', unlockInvitation);
+    openSealBtn.addEventListener('click', (e) => {
+      if (!isUnlocking) {
+        triggerAnimatedUnlock();
+      }
+    });
   }
 
   if (envelopeMonogram) {
-    envelopeMonogram.addEventListener('click', unlockInvitation);
+    envelopeMonogram.addEventListener('click', () => {
+      triggerAnimatedUnlock();
+    });
   }
 
   if (audioWidget) {

@@ -248,65 +248,165 @@ img {
   z-index: 1;
 }
 
-.btn-juniper-open {
-  background: linear-gradient(135deg, #3A5042 0%, #263529 60%, #1C2921 100%);
-  color: #F9F4EA;
-  border: 1px solid rgba(201, 168, 76, 0.6);
-  outline: none;
-  padding: 16px 38px;
-  border-radius: var(--radius-full);
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 0.84rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  cursor: pointer;
-  display: inline-flex;
+/* --------------------------------------------------------------------------
+   3. INTERACTIVE LOVE HEART TOGGLE - OPEN INVITATION (Uiverse barisdogansutcu)
+   -------------------------------------------------------------------------- */
+.open-invitation-toggle-wrap {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  box-shadow:
-    0 12px 32px rgba(35, 50, 40, 0.35),
-    0 2px 0 rgba(201, 168, 76, 0.35),
-    inset 0 1px 0 rgba(255,255,255,0.15);
-  transition: var(--transition);
+  justify-content: center;
   position: relative;
-  z-index: 1;
-  overflow: hidden;
+  z-index: 2;
+  margin: 10px auto 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.btn-juniper-open::after {
-  content: '';
+.love-heart:before,
+#switch {
+  display: none;
+}
+
+.love {
+  position: relative;
+  width: 64px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: heartPulse 3s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.love-heart,
+.love-heart::after {
+  border-color: #2F4036;
+  background-color: #4E6B58;
+  border: 1.5px solid #2F4036;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  width: 10px;
+  height: 8px;
+  border-bottom: 0;
+  box-shadow: inset 6px -5px 0px 2px #5B7B66;
+  transition: border-color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.round {
   position: absolute;
-  inset: 0;
-  background: var(--gold-shimmer);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: inherit;
-  z-index: 0;
+  z-index: 2;
+  width: 8px;
+  height: 8px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(18, 28, 22, 0.45);
+  border-radius: 100%;
+  left: 0px;
+  bottom: -1px;
+  transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: check-animation2 .5s forwards;
 }
 
-.btn-juniper-open:hover,
-.btn-juniper-open:active {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 18px 40px rgba(35, 50, 40, 0.45), var(--shadow-gold);
-  color: #241A0B;
-  border-color: var(--gold-primary);
+input:checked + label .round {
+  transform: translate(0px, 0px);
+  animation: check-animation .5s forwards;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(18, 28, 22, 0.55);
 }
 
-.btn-juniper-open:hover::after { opacity: 1; }
+@keyframes check-animation {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, 7px);
+  }
+  100% {
+    transform: translate(7px, 7px);
+  }
+}
 
-.vintage-key-icon {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-  flex-shrink: 0;
+@keyframes check-animation2 {
+  0% {
+    transform: translate(7px, 7px);
+  }
+  50% {
+    transform: translate(0px, 7px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.love-heart {
+  box-sizing: border-box;
   position: relative;
-  z-index: 1;
+  transform: rotate(-45deg) translate(-50%, -33px) scale(4);
+  display: block;
+  border-color: #2F4036;
+  cursor: pointer;
+  top: 0;
+  filter: drop-shadow(0 4px 10px rgba(47, 64, 54, 0.25));
 }
 
-.btn-juniper-open > span {
-  position: relative;
-  z-index: 1;
+input:checked + .love-heart,
+input:checked + .love-heart::after,
+input:checked + .love-heart .bottom {
+  border-color: #1A261D;
+  background-color: #26382C;
+  box-shadow: inset 6px -5px 0px 2px #354E3F;
+}
+
+.love-heart::after,
+.love-heart .bottom {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-color: #2F4036;
+  background-color: #4E6B58;
+  box-shadow: inset 6px -5px 0px 2px #5B7B66;
+  transition: border-color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.love-heart::after {
+  right: -9px;
+  transform: rotate(90deg);
+  top: 7px;
+}
+
+.love-heart .bottom {
+  width: 11px;
+  height: 11px;
+  border-left: 1.5px solid #2F4036;
+  border-bottom: 1.5px solid #2F4036;
+  border-color: #2F4036;
+  left: -1px;
+  top: 5px;
+  border-radius: 0px 0px 0px 5px;
+}
+
+.open-invitation-label {
+  display: block;
+  margin-top: 50px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sage-dark);
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.open-invitation-toggle-wrap:hover .open-invitation-label {
+  color: var(--gold-rich);
+  transform: translateY(-1px);
 }
 
 /* --------------------------------------------------------------------------
@@ -812,79 +912,88 @@ img {
 
 .profile-photo-wrapper {
   position: relative;
-  width: 180px;
-  height: 180px;
-  margin-bottom: 24px;
+  width: 190px;
+  height: 190px;
+  margin-bottom: 26px;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .photo-glow-ring {
   position: absolute;
-  top: -10px; left: -10px; right: -10px; bottom: -10px;
+  top: -8px; left: -8px; right: -8px; bottom: -8px;
   border-radius: 50%;
-  border: 1.5px dashed rgba(78, 107, 88, 0.45);
-  animation: rotateWreath 28s linear infinite;
+  border: 1.5px dashed rgba(201, 168, 76, 0.7);
+  animation: rotateWreath 32s linear infinite;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .photo-glow-ring::after {
   content: '';
   position: absolute;
-  top: 5px; left: 5px; right: 5px; bottom: 5px;
+  top: -4px; left: -4px; right: -4px; bottom: -4px;
   border-radius: 50%;
-  border: 1.5px solid rgba(201, 168, 76, 0.35);
+  border: 1px solid rgba(78, 107, 88, 0.35);
+  pointer-events: none;
 }
 
-/* Gold halo ring behind photo */
-.photo-glow-ring::before {
-  content: '';
-  position: absolute;
-  inset: -4px;
+.profile-photo-frame {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  background: conic-gradient(
-    rgba(201,168,76,0.55) 0deg,
-    rgba(240,217,138,0.9) 90deg,
-    rgba(201,168,76,0.55) 180deg,
-    rgba(165,127,42,0.7) 270deg,
-    rgba(201,168,76,0.55) 360deg
-  );
-  z-index: 0;
-  animation: rotateWreath 8s linear infinite;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  border: 4px solid #FFFFFF;
+  box-shadow:
+    0 10px 30px rgba(35, 28, 20, 0.16),
+    0 0 0 1px rgba(201, 168, 76, 0.3);
+  background: #E8EDE8;
 }
 
 .profile-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
-  border-radius: 50%;
-  border: 4px solid #FFFFFF;
-  box-shadow:
-    0 8px 28px rgba(35, 28, 20, 0.18),
-    0 0 0 1px rgba(201, 168, 76, 0.2);
   display: block;
-  position: relative;
-  z-index: 1;
-  /* Corrects EXIF rotation from phones — makes portrait straight */
   image-orientation: from-image;
   transform: rotate(0deg);
 }
 
+/* Portrait Zoom: Dennis (Groom) closely framed on face & upper body */
+.profile-photo.photo-groom {
+  transform: scale(1.65);
+  transform-origin: 52% 40%;
+}
+
+/* Portrait Zoom: Anu (Bride) closely framed on face & upper body */
+.profile-photo.photo-bride {
+  transform: scale(2.2);
+  transform-origin: 56% 24%;
+}
+
 .profile-role-tag {
   position: absolute;
-  bottom: -6px;
+  bottom: -11px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--sage-primary) 0%, var(--sage-dark) 100%);
-  color: #FFFFFF;
+  background: linear-gradient(135deg, #354E3F 0%, #1F3025 100%);
+  color: #FFFFFF !important;
   font-family: var(--font-sans);
-  font-size: 0.64rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  padding: 4px 16px;
+  padding: 6px 20px;
   border-radius: var(--radius-full);
   white-space: nowrap;
-  box-shadow: 0 3px 10px rgba(47, 64, 54, 0.3);
+  box-shadow: 0 4px 14px rgba(25, 40, 30, 0.35);
+  border: 1.5px solid #E6CA7E;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .profile-name {

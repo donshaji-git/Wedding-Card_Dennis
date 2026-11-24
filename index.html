@@ -87,12 +87,19 @@
       </p>
       <p class="juniper-date-badge">✦ Saturday • November 21, 2026 ✦</p>
 
-      <button id="open-seal-btn" class="btn-juniper-open">
-        <svg class="vintage-key-icon" viewBox="0 0 24 24">
-          <path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
-        </svg>
-        Open Invitation
-      </button>
+      <!-- Interactive Love Heart Toggle to Open Invitation (Uiverse) -->
+      <div class="open-invitation-toggle-wrap" id="open-seal-btn">
+        <div class="love">
+          <input id="switch" type="checkbox">
+          <label class="love-heart" for="switch" title="Tap heart to Open Invitation">
+            <i class="left"></i>
+            <i class="right"></i>
+            <i class="bottom"></i>
+            <div class="round"></div>
+          </label>
+        </div>
+        <label class="open-invitation-label" for="switch">Open Invitation</label>
+      </div>
     </div>
   </div>
 
@@ -100,7 +107,7 @@
        2. FLOATING MUSIC MUSIC BOX WIDGET
        Bespoke gold vinyl controller for romantic background melody
        ====================================================================== -->
-  <div id="music-box-widget" class="music-box-widget" title="Toggle Romantic Background Music">
+  <div id="music-box-widget" class="music-box-widget" title="Toggle Background Music (Varnajaalam)">
     <div id="disc-wrapper" class="disc-wrapper">
       <div class="disc-center"></div>
     </div>
@@ -155,7 +162,6 @@
         <h1 class="bku-malayalam-title">
           ഡെന്നിസ് <span class="bku-amp">&amp;</span> അനു
         </h1>
-        <span class="hero-english-script">Dennis &amp; Anu</span>
       </div>
 
       <!-- Invitation Decree -->
@@ -287,8 +293,9 @@
       <div class="profile-card">
         <div class="profile-photo-wrapper">
           <div class="photo-glow-ring"></div>
-          <!-- Image mapped from: C:\Users\donsh\Documents\Dennis\row img\ or assets/images/dennis-portrait.jpg -->
-          <img src="assets/images/dennis-portrait.jpg" alt="Dennis Mathew - The Groom" class="profile-photo" loading="lazy">
+          <div class="profile-photo-frame">
+            <img src="assets/images/dennis-portrait.jpg" alt="Dennis Mathew - The Groom" class="profile-photo photo-groom" loading="lazy">
+          </div>
           <span class="profile-role-tag">The Groom</span>
         </div>
 
@@ -359,8 +366,9 @@
       <div class="profile-card">
         <div class="profile-photo-wrapper">
           <div class="photo-glow-ring"></div>
-          <!-- Image mapped from: C:\Users\donsh\Documents\Dennis\row img\ or assets/images/anu-portrait.jpg -->
-          <img src="assets/images/anu-portrait.jpg" alt="Anu George - The Bride" class="profile-photo" loading="lazy">
+          <div class="profile-photo-frame">
+            <img src="assets/images/anu-portrait.jpg" alt="Anu George - The Bride" class="profile-photo photo-bride" loading="lazy">
+          </div>
           <span class="profile-role-tag">The Bride</span>
         </div>
 
